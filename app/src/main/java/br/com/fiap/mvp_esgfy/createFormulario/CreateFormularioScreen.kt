@@ -58,7 +58,6 @@ import retrofit2.Response
 @Composable
 fun CreateFormularioScreen (navController: NavController) {
 
-    val focusRequester = remember { FocusRequester() }
     val context        = LocalContext.current
 
     var perguntas      by remember { mutableStateOf(listOf<Pergunta>()) }
@@ -116,10 +115,14 @@ fun CreateFormularioScreen (navController: NavController) {
                                 }
                                 if ( !tituloPerguntaErro && !pontosErro && !tipoErro && !escolhaErro )
                                 {
+                                    var regra = ""
+
+                                    escolhas.forEach { regra += it.plus("\'/\'") }
+
                                     perguntas = perguntas.plusElement(Pergunta( titulo = tituloPergunta,
                                                                                 tipo = tipo,
                                                                                 pontos = pontos.toInt(),
-                                                                                escolhas = escolhas)
+                                                                                regra = regra)
                                                 )
                                 }
                             },
@@ -208,7 +211,6 @@ fun CreateFormularioScreen (navController: NavController) {
                                                 } else {
                                                     escolhas = escolhas.plusElement(escolha)
                                                     escolha = ""
-                                                    focusRequester.freeFocus()
                                                     escolhasErro = false
                                                 }
                                           },
