@@ -17,7 +17,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.fiap.mvp_esgfy.ui.theme.CustomGrayBt
-import br.com.fiap.mvp_esgfy.ui.theme.JetBrainsMono
+import br.com.fiap.mvp_esgfy.ui.theme.PoppinsRegular
 
 @Composable
 fun AddButton (title: String, onClick: () -> Unit) {
@@ -30,7 +30,7 @@ fun AddButton (title: String, onClick: () -> Unit) {
             )
             if ( title != "" ) {
                 Spacer(modifier = Modifier.width(10.dp))
-                Text(text = title, fontFamily = JetBrainsMono)
+                Text(text = title, fontFamily = PoppinsRegular)
             }
         }
     }

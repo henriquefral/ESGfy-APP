@@ -21,11 +21,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.fiap.mvp_esgfy.ui.theme.CustomBlueBt
 import br.com.fiap.mvp_esgfy.ui.theme.CustomOrange
-import br.com.fiap.mvp_esgfy.ui.theme.JetBrainsMono
+import br.com.fiap.mvp_esgfy.ui.theme.PoppinsRegular
 
 @Composable
-fun SaveButton (title: String, onClick: () -> Unit = {}) {
-    Box(modifier = Modifier.clip(RoundedCornerShape(33.dp)).background(Color.Cyan).size(150.dp, 55.dp)
+fun SaveButton (title: String, onClick: () -> Unit = {}, modifier : Modifier) {
+    Box(modifier = modifier.clip(RoundedCornerShape(33.dp)).background(Color.Cyan).size(150.dp, 55.dp)
     ) {
         Column(modifier = Modifier
                                     .background(CustomOrange)
@@ -39,7 +39,7 @@ fun SaveButton (title: String, onClick: () -> Unit = {}) {
                     modifier = Modifier.fillMaxSize()
             ) {
                 Row (verticalAlignment = Alignment.CenterVertically ) {
-                    Text(text = title, fontFamily = JetBrainsMono, fontSize = 24.sp)
+                    Text(text = title, fontFamily = PoppinsRegular, fontSize = 24.sp)
               }
             }
         }
